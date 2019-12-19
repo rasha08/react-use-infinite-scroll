@@ -1,6 +1,6 @@
 {
   "name": "react-use-infinite-scroll",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React useInfifniteScroll hook for fetching the data when user reaches end of the screen",
   "author": "rasha08",
   "license": "MIT",
