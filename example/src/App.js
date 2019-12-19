@@ -1,13 +1,17 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-import ExampleComponent from 'react-use-infinite-scroll'
+import { useInfiniteScroll } from 'react-use-infinite-scroll'
 
-export default class App extends Component {
-  render () {
+const App = () => {
+    const loadMore = () => console.log('LOAD MORE');
+
+    useInfiniteScroll(loadMore);
+
     return (
       <div>
-        <ExampleComponent text='Modern React component module' />
+        <h1>This component is now using infinite scroll</h1>
       </div>
     )
-  }
-}
+};
+
+export default App
