@@ -21,7 +21,7 @@ useInfiniteScroll: (callback: () => void) => void
 
 ## Usage  
 ```tsx 
-import React from 'react';  
+import React, { useEffect } from 'react';  
 import { useInfiniteScroll } from 'react-use-infinite-scroll'; 
 
 import { useSocialItemsContext } from './context/social-items';  
@@ -37,14 +37,16 @@ const App: React.FC = (): JSX.Element => {
   
   const loadMore = () => setCurrentPage(currentPage + 1);  
   
-  useInfiniteScroll(loadMore);  
-  
+  useEffect(() => {
+    useInfiniteScroll(loadMore);  
+  }, [])
+
   return (  
    <BaseLayout>  
      {items.map((item: SocialEntity): JSX.Element => (
        <Card item={item} key={item.title} />  
      ))}  
- </BaseLayout>  
+   </BaseLayout>  
  );  
 };  
   
